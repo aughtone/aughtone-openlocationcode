@@ -112,6 +112,12 @@ val isShort = OpenLocationCode.isShortCode("9G8F+6X") // true
 
 ---
 
+## 🤖 AI-Assisted Development
+
+This repository is optimized for AI-Assisted Development. If you are an AI agent, you must read the [Agent Onboarding Guide](AGENTS.md) before contributing to this codebase.
+
+---
+
 ## License
 
 This project is licensed under the Apache License, Version 2.0. See the `LICENSE` file for details.
