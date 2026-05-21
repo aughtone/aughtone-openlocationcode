@@ -6,7 +6,6 @@ import java.security.MessageDigest
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.multiplatformLibrary)
-    alias(libs.plugins.kotlinSerialization)
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
@@ -74,13 +73,11 @@ kotlin {
     sourceSets {
         val wasmJsMain by getting {
             dependencies {
-                implementation(libs.kotlin.browser)
             }
         }
         val commonMain by getting {
             dependencies {
-                api(libs.kotlinx.datetime)
-                api(libs.kotlinx.serialization.json)
+                implementation(kotlin("stdlib"))
             }
         }
         val commonTest by getting {
