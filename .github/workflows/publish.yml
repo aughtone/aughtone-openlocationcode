@@ -138,12 +138,12 @@ jobs:
           git merge master -m "Merge master into sync branch for v$VERSION"
           git push origin sync-master-to-develop-v$VERSION
           
-          # Create PR
+          # Create PR (gracefully fall back if Action has no PR permissions)
           gh pr create \
             --title "chore: sync master to develop after v$VERSION release" \
             --body "This PR syncs the automated \`Package.swift\` checksum update back into the develop branch after a release." \
             --base develop \
-            --head sync-master-to-develop-v$VERSION
+            --head sync-master-to-develop-v$VERSION || echo "Warning: GitHub Actions is not permitted to create pull requests. Please enable it in Settings > Actions > General > Workflow permissions, or create the PR manually."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

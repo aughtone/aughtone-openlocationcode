@@ -17,7 +17,7 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "OpenLocationCode",
-            url: "https://github.com/aughtone/aughtone-openlocationcode/releases/download/v0.0.1-alpha1/OpenLocationCode.xcframework.zip",
+            url: "https://github.com/aughtone/aughtone-openlocationcode/releases/download/v0.0.1-alpha2/OpenLocationCode.xcframework.zip",
             checksum: "PASTE_CHECKSUM_HERE"
         )
     ]
