@@ -22,7 +22,7 @@ You can add this library to your KMP, Android, or JVM project by declaring the d
 
 ```kotlin
 dependencies {
-    implementation("io.github.aughtone:openlocationcode:<latest-version>")
+    implementation("io.github.aughtone:openlocationcode:0.0.1-alpha1")
 }
 ```
 
