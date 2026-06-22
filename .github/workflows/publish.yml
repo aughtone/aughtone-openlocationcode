@@ -6,6 +6,9 @@ on:
   release:
     types: [published]
 
+env:
+  GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m -XX:+UseParallelGC"
+
 permissions:
   contents: write
   pull-requests: write
