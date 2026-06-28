@@ -18,7 +18,7 @@ rootProject.plugins.withType<YarnPlugin> {
 
 rootProject.plugins.withType<org.jetbrains.kotlin.gradle.targets.wasm.yarn.WasmYarnPlugin> {
     rootProject.the<org.jetbrains.kotlin.gradle.targets.wasm.yarn.WasmYarnRootExtension>().apply {
-        lockFileDirectory = project.rootDir.resolve("kotlin-js-store")
+        lockFileDirectory = project.rootDir.resolve("kotlin-js-store/wasm")
         yarnLockMismatchReport = org.jetbrains.kotlin.gradle.targets.js.yarn.YarnLockMismatchReport.WARNING
         reportNewYarnLock = false
         yarnLockAutoReplace = true
