@@ -8,6 +8,10 @@ type: "Aught One AI-Skill"
 
 This file teaches AI coding agents how to interact with and utilize the `io.github.aughtone:openlocationcode` Kotlin Multiplatform library.
 
+## Supported Targets
+- JVM, Android, iOS (Simulator & Arm64), macOS (X64 & Arm64), tvOS, watchOS, Linux, MingW.
+- JavaScript (JS) and WebAssembly (WasmJS).
+
 ## AI Toolbox
 - Use `OpenLocationCode.encode(lat, lng, length)` to convert coordinates to a Plus Code string.
 - Use `OpenLocationCode.decode(code)` to get a `CodeArea` representing the bounding box of a code.
