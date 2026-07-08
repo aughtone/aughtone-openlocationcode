@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
+import java.util.concurrent.TimeUnit
 import org.jetbrains.kotlin.gradle.plugin.mpp.apple.XCFramework
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompileCommon
 import java.security.MessageDigest
@@ -9,7 +10,25 @@ plugins {
     alias(libs.plugins.vanniktech.mavenPublish)
 }
 
-group = libs.versions.namespace.get()
+val hasWatchosSimulator = try {
+    val output = providers.exec {
+        commandLine("xcrun", "simctl", "list", "runtimes", "watchos", "--json")
+    }.standardOutput.asText.get()
+    output.contains("\"isAvailable\" : true")
+} catch (e: Exception) {
+    false
+}
+
+val hasTvosSimulator = try {
+    val output = providers.exec {
+        commandLine("xcrun", "simctl", "list", "runtimes", "tvos", "--json")
+    }.standardOutput.asText.get()
+    output.contains("\"isAvailable\" : true")
+} catch (e: Exception) {
+    false
+}
+
+group = libs.versions.group.get()
 version = libs.versions.versionName.get()
 
 //noinspection WrongGradleMethod
@@ -24,7 +43,7 @@ kotlin {
     }
 
     // See: https://kotlinlang.org/docs/js-project-setup.html
-    js(IR) {
+    js {
         browser {
             generateTypeScriptDefinitions()
             webpackTask {
@@ -56,7 +75,7 @@ kotlin {
             isStatic = true
             binaryOption(
                 "bundleId",
-                "${libs.versions.namespace.get()}.openlocationcode"
+                libs.versions.namespace.get()
             )
             binaryOption(
                 "bundleShortVersionString",
@@ -84,6 +103,15 @@ kotlin {
             dependencies {
                 implementation(libs.kotlin.test)
             }
+        }
+    }
+
+    tasks.withType<org.jetbrains.kotlin.gradle.targets.native.tasks.KotlinNativeTest>().configureEach {
+        if (name.contains("watchosSimulator", ignoreCase = true) && !hasWatchosSimulator) {
+            enabled = false
+        }
+        if (name.contains("tvosSimulator", ignoreCase = true) && !hasTvosSimulator) {
+            enabled = false
         }
     }
 
