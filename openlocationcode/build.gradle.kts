@@ -177,6 +177,19 @@ afterEvaluate {
     }
 }
 
+// Ship the Apache licence and our attribution inside the jars this module produces.
+// Reaches the main jvm/android jars. It does not reach the sources or javadoc jars —
+// the publish plugin builds those and they do not pick up this spec; sources are
+// covered anyway, since every source file carries the full licence header inline.
+// js, wasmJs and the native targets have no META-INF path at all, so the repo-root
+// LICENSE and NOTICE remain authoritative for those.
+tasks.withType<Jar>().configureEach {
+    metaInf {
+        from(rootProject.file("LICENSE"))
+        from(rootProject.file("NOTICE"))
+    }
+}
+
 mavenPublishing {
     publishToMavenCentral(automaticRelease = true)
 
@@ -201,7 +214,6 @@ mavenPublishing {
         developers {
             developer {
                 id = "bpappin"
-                name = "Brill pappin"
                 url = "https://github.com/bpappin"
             }
         }

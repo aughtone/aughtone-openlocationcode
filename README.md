@@ -4,7 +4,19 @@ This is a pure Kotlin Multiplatform (KMP) port of Google's [Open Location Code](
 
 Open Location Code is a technology that gives a way of encoding location into a format that is easier to use than latitude and longitude.
 
-> **Attribution:** This library is a direct Kotlin port of the original Java implementation maintained by Google. The core logic, constants, and math were derived from the [official Google open-location-code repository](https://github.com/google/open-location-code).
+> **Attribution:** This library is a direct Kotlin port of the original Java implementation maintained by Google. The core logic, constants, and math were derived from the [official Google open-location-code repository](https://github.com/google/open-location-code), and are used under the Apache License, Version 2.0. See [`NOTICE`](NOTICE) for the full attribution.
+
+### Why this lives outside Google's repository
+
+Google does not take language ports into the main repository. When a Kotlin Multiplatform port was
+proposed in [google/open-location-code#366](https://github.com/google/open-location-code/pull/366)
+— open from 2019 until it was closed in 2024 — the maintainers were explicit:
+
+> This is great work but unfortunately we're struggling to support the implementations we already
+> have. If you can publish it to your own repo, please add a link in
+> [External_Implementations.md](https://github.com/google/open-location-code/blob/main/Documentation/External_Implementations.md#external-implementations).
+
+Publishing independently is therefore the arrangement Google asked for, not a fork around them.
 
 ## Features
 - **100% Pure Kotlin**: Built entirely in the `commonMain` source set. No `expect`/`actual` platform wrappers required.
@@ -109,14 +121,6 @@ val isValid = OpenLocationCode.isValidCode("8FVC9G8F+6X") // true
 val isFull = OpenLocationCode.isFullCode("8FVC9G8F+6X") // true
 val isShort = OpenLocationCode.isShortCode("9G8F+6X") // true
 ```
-
----
-
-## 🤖 AI-Assisted Development
-
-This repository is optimized for AI-Assisted Development. If you are an AI agent, you must read the [Agent Onboarding Guide](AGENTS.md) before contributing to this codebase.
-
----
 
 ## License
 
