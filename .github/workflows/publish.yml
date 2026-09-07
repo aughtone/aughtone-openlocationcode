@@ -1,10 +1,23 @@
 name: Publish
 
+# DISABLED — automatic publishing is off.
+#
+# Rationale: this workflow published to Maven Central and cut a GitHub release on
+# every push to master. That is unsafe while the git history is being rewritten,
+# because a force-push to master is a push event and would trigger a publish of
+# whatever the rewritten tip happens to contain.
+#
+# GitHub reads this file from the tip commit of the ref being pushed, so as long as
+# the triggers below stay commented out in the commit you push, nothing fires.
+#
+# To re-enable: restore the two triggers below, land it on develop first, and go
+# through a normal release cycle rather than pushing straight to master.
 on:
-  push:
-    branches: [ "master" ]
-  release:
-    types: [published]
+  workflow_dispatch:
+  # push:
+  #   branches: [ "master" ]
+  # release:
+  #   types: [published]
 
 env:
   GRADLE_OPTS: -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m -XX:+UseParallelGC"
