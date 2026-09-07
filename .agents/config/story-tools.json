@@ -1,0 +1,15 @@
+{
+  "tracker": {
+    "type": "github",
+    "connection": "github-aughtone-openlocationcode",
+    "mcpServer": "github-aughtone-openlocationcode",
+    "repo": "aughtone/aughtone-openlocationcode",
+    "prefix": "AOLC"
+  },
+  "snapshot": "synced",
+  "updates": {
+    "check": true,
+    "skillsRepo": "bpappin/skills",
+    "skillsBranch": "master"
+  }
+}
