@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.2] - 2026-09-07
+
+First release outside the `alpha` line.
+
+### Added
+- `NOTICE` at the repository root, recording the derivation from Google's Open Location Code. It existed but had never been committed, so the link to it from the README was broken.
+- `LICENSE` and `NOTICE` are now packaged into the published JVM and Android jars under `META-INF/`.
+- Provenance comments on the test data copied from `google/open-location-code`, noting the upstream path and, where applicable, that the copy was trimmed.
+
+### Changed
+- Every derived source file now carries the port's own copyright line and an Apache 2.0 §4(b) modification notice alongside Google's original notice, which is retained verbatim.
+- The copyright holder is stated consistently as The Aught One Authors across `LICENSE`, `NOTICE` and the source headers.
+- `AGENTS.md` records the settled header convention, what each source file actually derives from upstream, and the trademark position on the Open Location Code and Plus Codes names.
+- The Maven POM `developers` block now identifies the maintainer by GitHub handle only.
+
+### Removed
+- The bundled AI-Skill definition files: the repository-local one under `.agents/skills/`, and the copy that shipped inside published artifacts at `META-INF/ai-skills/`. Artifacts from this release onward do not contain them.
+- These files were also removed from the repository's git history. **Existing clones are incompatible** — re-clone, or `git fetch && git reset --hard origin/<branch>`. Artifacts already published to Maven Central under `0.0.1-alpha1` through `0.0.1-alpha3` are immutable and still contain the file.
+
+## [0.0.1-alpha3] - 2026-07-08
+
+### Changed
+- Separated the Maven `group` coordinate from the Android and framework `namespace`.
+- Made the watchOS and tvOS simulator availability checks compatible with Gradle's configuration cache.
+
 ## [0.0.1-alpha2] - 2026-06-28
 
 ### Added
