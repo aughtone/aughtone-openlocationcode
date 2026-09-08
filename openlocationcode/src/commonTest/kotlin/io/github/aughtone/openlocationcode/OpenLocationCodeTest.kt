@@ -1,5 +1,6 @@
 /*
  * Copyright 2014 Google Inc. All rights reserved.
+ * Copyright 2026 The Aught One Authors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,6 +13,10 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * Modifications: ported from the original Java implementation to Kotlin Multiplatform.
+ * The logic, constants and mathematics follow the original; the implementation was
+ * rewritten in Kotlin.
  */
 
 package io.github.aughtone.openlocationcode

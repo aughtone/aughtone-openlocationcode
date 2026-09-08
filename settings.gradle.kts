@@ -27,5 +27,5 @@ dependencyResolutionManagement {
 }
 
 
-rootProject.name = "OpenLocationCode"
+rootProject.name = "AOOpenLocationCode"
 include(":openlocationcode")

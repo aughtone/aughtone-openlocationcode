@@ -1,3 +1,6 @@
+# Copied from google/open-location-code, test_data/shortCodeTests.csv
+# Copyright 2014 Google Inc., Apache License 2.0 — see LICENSE at the repository root.
+# Modified: the upstream comment header was trimmed; the data rows are unchanged.
 # Test shortening and extending codes.
 #
 # Format:

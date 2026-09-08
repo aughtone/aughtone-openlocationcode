@@ -1,0 +1,24 @@
+Aught One — Open Location Code
+Copyright 2026 The Aught One Authors
+
+This product includes software derived from Open Location Code
+(https://github.com/google/open-location-code)
+Copyright 2014 Google Inc.
+
+Open Location Code is licensed under the Apache License, Version 2.0. A copy of
+that license is included in the LICENSE file at the root of this repository, and
+is also available at http://www.apache.org/licenses/LICENSE-2.0
+
+This library is a Kotlin Multiplatform port of the original Java implementation.
+The core logic, constants and mathematics are derived from the original work, and
+the source files derived from it retain Google's copyright notice in their headers.
+
+This port is published independently at Google's request. Language ports are not
+accepted into the upstream repository; see
+https://github.com/google/open-location-code/pull/366 where the maintainers asked
+that external implementations be published separately and linked from
+Documentation/External_Implementations.md
+
+Google Inc. does not endorse this port, and no endorsement is implied. The names
+"Google" and "Open Location Code" are used only to identify the origin of the
+derived work.
