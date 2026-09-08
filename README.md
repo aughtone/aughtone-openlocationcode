@@ -45,7 +45,7 @@ For native Swift development, this library is distributed as a precompiled XCFra
 1. Open your Xcode project.
 2. Go to **File > Add Package Dependencies**.
 3. Enter the repository URL: `https://github.com/aughtone/aughtone-openlocationcode`
-4. Select the **Up to Next Major Version** rule. *(Note: If you are using a prerelease tag like `-alpha1`, you must select **Exact Version**).*
+4. Select the **Up to Next Minor Version** rule. *(While this library is pre-1.0 a minor bump may carry breaking changes, so **Up to Next Major** would pull them in. For a prerelease tag such as `-alpha1`, select **Exact Version**.)*
 5. Add the `OpenLocationCode` product to your target.
 
 ---

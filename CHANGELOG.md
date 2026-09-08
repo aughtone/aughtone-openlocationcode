@@ -19,6 +19,9 @@ First release outside the `alpha` line.
 - The copyright holder is stated consistently as The Aught One Authors across `LICENSE`, `NOTICE` and the source headers.
 - `AGENTS.md` records the settled header convention, what each source file actually derives from upstream, and the trademark position on the Open Location Code and Plus Codes names.
 - The Maven POM `developers` block now identifies the maintainer by GitHub handle only.
+- Gradle `rootProject.name` is now `AOOpenLocationCode`, disambiguating the build from the `OpenLocationCode` framework and Swift package names, which are unchanged. As a consequence the Kotlin metadata module identity changed from `io.github.aughtone:openlocationcode_OpenLocationCode` to `io.github.aughtone:openlocationcode_AOOpenLocationCode`. The Swift `import OpenLocationCode` and the Maven coordinate are unaffected.
+- Enabled parallel Gradle tooling sync (`org.gradle.tooling.parallel`) for Gradle 9.4+.
+- README now recommends the **Up to Next Minor Version** rule for Swift Package Manager, since a pre-1.0 minor bump may carry breaking changes.
 
 ### Removed
 - The bundled AI-Skill definition files: the repository-local one under `.agents/skills/`, and the copy that shipped inside published artifacts at `META-INF/ai-skills/`. Artifacts from this release onward do not contain them.
